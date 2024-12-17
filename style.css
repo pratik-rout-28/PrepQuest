@@ -1,0 +1,25 @@
+body {
+  background-color: #f7f9fc;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #333;
+}
+
+#quiz-container {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+button {
+  width: 150px;
+}
+
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5722;
+}

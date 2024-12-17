@@ -1,3 +1,7 @@
+import db from "./firebase.js";
+import { collection, getDocs } from "firebase/firestore";
+
+
 // Quiz data: Array of questions, options, and correct answers
 const quizData = [{
     question: "What is the capital of France?",
@@ -128,3 +132,38 @@ quizContainer.innerHTML = `
     loadQuestion(currentQuestion);
     startTimer();
     };
+
+    async function loadQuiz() {
+        const quizContainer = document.getElementById("quiz-container");
+        try {
+            const querySnapshot = await getDocs(collection(db, "quizzes"));
+            querySnapshot.forEach((doc) => {
+            const quizData = doc.data();
+            quizContainer.innerHTML += `
+            <div>
+            <h3>${quizData.title}</h3>
+            <ul>
+            ${Object.values(quizData.questions)
+            .map(
+            (q) => `
+            <li>
+            ${q.question}
+            <ul>
+            ${q.options
+            .map((opt) => `<li>${opt}</li>`)
+            .join("")}
+            </ul>
+            </li>
+            `
+            )
+            .join("")}
+            </ul>
+            </div>
+            `;
+            });
+            } catch (error) {
+            console.error("Error fetching quiz data:", error);
+            }
+            }
+            loadQuiz();
+                                    

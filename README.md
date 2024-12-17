@@ -1,2 +1,2 @@
 # PrepQuest
-It combines the idea of preparation for competitive exams with the quest or adventure aspect of the gamified learning process, making it sound engaging and motivating.
+"PrepQuest" is a gamified EdTech platform designed to help students prepare for competitive exams. The platform combines the fun of quest and adventure with the rigor of exam preparation, offering an engaging learning experience. Through features like quizzes and a leaderboard, it motivates users to stay on track and progress. The project incorporates HTML, JavaScript, and CSS for a dynamic, interactive user experience, with Firebase integration for storing data and user feedback. This makes exam preparation both effective and enjoyable.
